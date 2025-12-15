@@ -3,7 +3,6 @@
   flex-direction: column;
   align-items: center;
   background-image: linear-gradient(to right, #2e86e3,#0f5aa1,#115e8e);
-   justify-content: center;
    padding: 20px;
    min-height: 100vh;
 }
@@ -15,11 +14,10 @@
 .curent-forecast{
   display: flex;
   justify-content: space-between;
-  border: 1px solid #fff;
-  width: 390px;
+  width: 400px;
   color: #fff;
   height: 280px;
-  margin: 10px;
+  margin: 20px;
   border-radius: 4px;
   align-items: center;
 }
@@ -30,4 +28,48 @@
 .current-1{
 display: flex;
 flex-direction: column;
+}
+.hourly-heading{
+  color: #fff;
+  font-size: 26px;
+  font-weight: 500;
+}
+.daily-hourly-card{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.cards-container{
+  padding: 1opx;
+   border: 1px solid #f4f402;
+   border-radius: 8px;
+   padding: 6px;
+   color: #ddd;
+   font-size: 18px;
+}
+.search-box{
+   padding: 10px;
+   width: 260px;
+   font-size: 18px;
+   color: #000;
+   outline: none;
+   border: 1px solid #fff;
+   border-radius: 6px;
+   margin-right: 10px;
+}
+.get-weather-btn{
+  padding: 10px 15px;
+  border: 1px solid #fff;
+  border-radius: 6px;
+  margin: 20px;
+  background-color: #fff;
+  cursor: pointer;
+}
+.search-box-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  align-items: center;
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
 
 
 import './index.css' 
@@ -9,6 +9,8 @@ function Weather() {
   const [hourly, setHourly] = useState([]);
   const [daily, setDaily] = useState([]);
   const [loading, setLoading] = useState(false);
+
+  
 
   // Convert UNIX timestamp to readable time
   const convertUnixToTime = (unix) =>
@@ -25,6 +27,9 @@ function Weather() {
       month: "short",
     });
 
+
+
+  
   const getWeather = async () => {
     if (!city) {
       alert("Please enter a city name");
@@ -81,18 +86,21 @@ console.log(forecast.list); // Array of 3-hour forecasts
     }
   };
 
+  
+
   return (
     <div className="weather-app-container">
-      <h1 className="weather-heading">Weather App</h1>
-     <div>
+     
+     <div className="search-box-card">
+       <h1 className="weather-heading">Weather App</h1>
       <input
         type="text"
-        placeholder="Enter city"
+        placeholder="Enter city to get weather..."
         value={city}
         onChange={(e) => setCity(e.target.value)}
-        style={{ padding: "10px", width: "200px", marginRight: "10px" }}
+        className="search-box"
       />
-      <button onClick={getWeather} style={{ padding: "10px 15px", cursor: "pointer" }}>
+      <button onClick={getWeather} className="get-weather-btn">
         Get Weather
       </button>
      </div>
@@ -124,10 +132,10 @@ console.log(forecast.list); // Array of 3-hour forecasts
       {/* Hourly Forecast */}
       {hourly.length > 0 && (
         <div style={{ marginTop: "20px" }}>
-          <h3>Hourly Forecast (Next 12 hours)</h3>
-          <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: "10px" }}>
+          <h3 className="hourly-heading">Hourly Forecast (Next 12 hours)</h3>
+          <div className="daily-hourly-card">
             {hourly.map((hour, i) => (
-              <div key={i} style={{ padding: "10px", border: "1px solid #ddd", borderRadius: "8px" }}>
+              <div key={i} className="cards-container">
                 <p>{convertUnixToTime(hour.dt)}</p>
                 <p>{hour.main.temp}°C</p>
                 <p>{hour.weather[0].description}</p>
@@ -140,10 +148,10 @@ console.log(forecast.list); // Array of 3-hour forecasts
       {/* Daily Forecast */}
       {daily.length > 0 && (
         <div style={{ marginTop: "20px" }}>
-          <h3>Daily Forecast (Next 5 days)</h3>
-          <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: "10px" }}>
+          <h3  className="hourly-heading">Daily Forecast (Next 5 days)</h3>
+          <div className="daily-hourly-card">
             {daily.map((day, i) => (
-              <div key={i} style={{ padding: "10px", border: "1px solid #ddd", borderRadius: "8px" }}>
+              <div key={i} className="cards-container">
                 <p>{convertUnixToDate(new Date().getTime() + i * 86400000)}</p>
                 <p>Min: {day.min}° / Max: {day.max}°</p>
                 <p>{day.weather}</p>
