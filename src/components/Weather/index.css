@@ -1,0 +1,33 @@
+.weather-app-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: linear-gradient(to right, #2e86e3,#0f5aa1,#115e8e);
+   justify-content: center;
+   padding: 20px;
+   min-height: 100vh;
+}
+.weather-heading{
+  font-family: "Roboto";
+  color: #fff;
+  font-size: 34px;
+}
+.curent-forecast{
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #fff;
+  width: 390px;
+  color: #fff;
+  height: 280px;
+  margin: 10px;
+  border-radius: 4px;
+  align-items: center;
+}
+.current-card-2{
+  display: flex;
+  flex-direction: column;
+}
+.current-1{
+display: flex;
+flex-direction: column;
+}
